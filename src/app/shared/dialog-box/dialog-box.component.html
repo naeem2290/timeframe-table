@@ -1,0 +1,20 @@
+<div class="content">
+  <h1 mat-dialog-title><b>Updated Data</b></h1>
+  <div mat-dialog-content>
+    <div *ngFor="let data of data.history">
+      <div style="display: flex;align-items: baseline;gap: 20px;">
+        <h3><b>Time Duration: </b></h3>{{data.time}}
+        <h3><b>Previous Value: </b></h3>{{data.old}}
+        <h3><b>New Value: </b></h3>{{data.newValue}}
+        <h3><b>Date: </b></h3>{{data.date}}
+      </div>
+
+    </div>
+    <div *ngIf="!data.history.length">
+      <h1>There are no updated values</h1>
+    </div>
+  </div>
+  <div mat-dialog-actions>
+    <button mat-raised-button color="primary" mat-button mat-dialog-close (click)="onConfirmClick()">Close</button>
+  </div>
+</div>

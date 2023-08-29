@@ -1,0 +1,16 @@
+.content {
+  background-color: grey;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 1rem;
+}
+
+::ng-deep.mdc-dialog__container {
+  height:  auto !important;
+}
+
+::ng-deep.mdc-dialog {
+  height:  auto !important;
+}
+

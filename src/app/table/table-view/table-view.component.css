@@ -1,0 +1,34 @@
+input {
+  border: none;
+  color: white;
+  background: grey;
+  text-align: center;
+}
+
+.input-disabled {
+  pointer-events:none;
+  background: #424242;
+}
+
+th{
+  text-align: center;
+}
+
+.header {
+  display: flex;
+  justify-content: center;
+  padding: 1rem;
+  background-color: #424242;
+  color: white;
+  font-style: bold;
+}
+
+.head {
+  text-align: center;
+  width: 80%;
+  font-size: 40px;
+}
+
+button {
+  margin: 0 20px;
+}

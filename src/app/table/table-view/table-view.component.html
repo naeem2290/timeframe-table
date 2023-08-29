@@ -1,0 +1,89 @@
+<div content>
+  <div class="header">
+    <h1 class="head">Timeframe Table</h1>
+    <div class="buttons"><button mat-raised-button color="primary" (click)="editMode  = false">Edit</button>
+      <button mat-raised-button color="accent" (click)="onSubmit()">Submit</button>
+    </div>
+  </div>
+  <table mat-table [dataSource]="dataSource">
+    <ng-container matColumnDef="TimeSlot">
+      <th mat-header-cell *matHeaderCellDef>
+        TimeSlot
+      </th>
+      <td mat-cell *matCellDef="let element"> {{element.timeslot}} </td>
+    </ng-container>
+    <ng-container matColumnDef="Sunday">
+      <th mat-header-cell *matHeaderCellDef>
+        Sunday
+      </th>
+      <td mat-cell *matCellDef="let element; let i = index">
+        <input type=text matInput [ngModel]="element.Sunday?.value" (keypress)="numberValidation($event)"
+          [ngClass]="{'input-disabled' : editMode || !element.Sunday?.value}"
+          (change)="editTable(i, element.Sunday.value ,$event, 'Sunday')">
+      </td>
+    </ng-container>
+    <ng-container matColumnDef="Monday">
+      <th mat-header-cell *matHeaderCellDef>
+        Monday
+      </th>
+      <td mat-cell *matCellDef="let element; let i = index">
+        <input type=text matInput [ngModel]="element.Monday?.value" (keypress)="numberValidation($event)"
+          [ngClass]="{'input-disabled' : editMode || !element.Monday?.value}"
+          (change)="editTable(i, element.Monday.value ,$event, 'Monday')">
+      </td>
+    </ng-container>
+    <ng-container matColumnDef="Tuesday">
+      <th mat-header-cell *matHeaderCellDef>
+        Tuesday
+      </th>
+      <td mat-cell *matCellDef="let element; let i = index">
+        <input type=text matInput [ngModel]="element.Tuesday?.value" (keypress)="numberValidation($event)"
+          [ngClass]="{'input-disabled' : editMode || !element.Tuesday?.value}"
+          (change)="editTable(i, element.Tuesday.value ,$event, 'Tuesday')">
+      </td>
+    </ng-container>
+    <ng-container matColumnDef="Wednesday">
+      <th mat-header-cell *matHeaderCellDef>
+        Wednesday
+      </th>
+      <td mat-cell *matCellDef="let element; let i = index">
+        <input type=text matInput [ngModel]="element.Wednesday?.value" (keypress)="numberValidation($event)"
+          [ngClass]="{'input-disabled' : editMode || !element.Wednesday?.value}"
+          (change)="editTable(i, element.Wednesday.value ,$event, 'Wednesday')">
+      </td>
+    </ng-container>
+    <ng-container matColumnDef="Thursday">
+      <th mat-header-cell *matHeaderCellDef>
+        Thursday
+      </th>
+      <td mat-cell *matCellDef="let element; let i = index">
+        <input type=text matInput [ngModel]="element.Thursday?.value" (keypress)="numberValidation($event)"
+          [ngClass]="{'input-disabled' : editMode || !element.Thursday?.value}"
+          (change)="editTable(i, element.Thursday.value ,$event, 'Thursday')">
+      </td>
+    </ng-container>
+    <ng-container matColumnDef="Friday">
+      <th mat-header-cell *matHeaderCellDef>
+        Friday
+      </th>
+      <td mat-cell *matCellDef="let element; let i = index">
+        <input type=text matInput [ngModel]="element.Friday?.value" (keypress)="numberValidation($event)"
+          [ngClass]="{'input-disabled' : editMode || !element.Friday?.value}"
+          (change)="editTable(i, element.Friday?.value ,$event, 'Friday')">
+      </td>
+    </ng-container>
+    <ng-container matColumnDef="Saturday">
+      <th mat-header-cell *matHeaderCellDef>
+        Saturday
+      </th>
+      <td mat-cell *matCellDef="let element; let i = index">
+        <input type=text matInput [ngModel]="element.Saturday?.value" (keypress)="numberValidation($event)"
+          [ngClass]="{'input-disabled' : editMode || !element.Saturday?.value}"
+          (change)="editTable(i, element.Saturday?.value ,$event, 'Saturday')">
+      </td>
+    </ng-container>
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+  <mat-paginator [pageSizeOptions]="[24]" aria-label="Select page of users"></mat-paginator>
+</div>
